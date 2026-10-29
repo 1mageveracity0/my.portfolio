@@ -1,0 +1,488 @@
+
+/* 1. General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #0b1120;
+    --card-background: #151e30;
+    --accent: #38bdf8;
+    --text: #f1f5f9;
+    --muted: #a7b2c5;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 2. Navigation bar */
+header {
+    background-color: #10192a;
+    border-bottom: 1px solid #25334a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo span,
+h1 span,
+.section-title span {
+    color: var(--accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--accent);
+}
+
+/* 3. Home / Hero section */
+.hero {
+    max-width: 1100px;
+    min-height: 80vh;
+    margin: auto;
+    padding: 80px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.intro,
+.project-number {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.hero-content > p:not(.intro) {
+    color: var(--muted);
+    max-width: 600px;
+    margin-bottom: 28px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #07111e;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 2px solid var(--accent);
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: transparent;
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* Profile card */
+.hero-card {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 32px 20px;
+    text-align: center;
+    background-color: var(--card-background);
+    border: 1px solid #2c3a52;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    display: grid;
+    place-items: center;
+    background-color: var(--accent);
+    color: #07111e;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.hero-card p {
+    color: var(--muted);
+}
+
+.hero-card .status {
+    color: #4ade80;
+    font-size: 0.85rem;
+    margin-top: 12px;
+}
+
+/* 4. General sections */
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 24px;
+    scroll-margin-top: 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    color: var(--muted);
+}
+
+.about-content p + p {
+    margin-top: 16px;
+}
+
+/* 5. Flexbox cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.card {
+    flex: 1 1 250px;
+    padding: 28px;
+    background-color: var(--card-background);
+    border: 1px solid #2c3a52;
+    border-radius: 12px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 25px rgba(56, 189, 248, 0.08);
+}
+
+.card-icon {
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+.project-number {
+    margin-bottom: 12px;
+}
+
+.tech {
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+
+/* 6. Contact section */
+.contact {
+    text-align: center;
+}
+
+.contact > p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: var(--muted);
+}
+
+/* 7. Footer */
+footer {
+    padding: 25px 20px;
+    text-align: center;
+    background-color: #10192a;
+    border-top: 1px solid #25334a;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* 8. Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 9. Responsive design: tablets and phones */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 55px;
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .hero-content > p:not(.intro) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-card {
+        width: min(100%, 320px);
+    }
+
+    .section {
+        padding: 55px 20px;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+}
+
+/* 10. Smaller mobile phones */
+@media (max-width: 400px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        padding: 22px;
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* JavaScript portfolio additions */
+
+/* Hamburger menu button */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid #2c3a52;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Button appearance */
+button {
+    font: inherit;
+}
+
+.secondary-btn {
+    margin-left: 10px;
+}
+
+/* Dynamic introduction */
+#extra-info {
+    color: var(--accent);
+    margin-top: 16px;
+    font-weight: bold;
+}
+
+/* Contact form */
+.contact-intro {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 28px;
+    background-color: var(--card-background);
+    border: 1px solid #2c3a52;
+    border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--background);
+    color: var(--text);
+    border: 1px solid #40506a;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-color: var(--accent);
+}
+
+.error-message {
+    display: block;
+    color: #fca5a5;
+    margin-top: 5px;
+    font-size: 0.85rem;
+}
+
+.input-invalid {
+    border-color: #f87171 !important;
+}
+
+.input-valid {
+    border-color: #4ade80 !important;
+}
+
+#form-feedback {
+    margin-top: 16px;
+    font-weight: bold;
+}
+
+#form-feedback.success {
+    color: #4ade80;
+}
+
+#form-feedback.failure {
+    color: #fca5a5;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+        padding: 16px 0;
+    }
+
+    .nav-links.menu-open {
+        display: flex;
+    }
+
+    .secondary-btn {
+        margin: 12px 0 0;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
